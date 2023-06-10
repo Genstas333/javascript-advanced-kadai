@@ -4,3 +4,10 @@ const holidays = ["正月","成人の日","建国記念日","天皇誕生日","�
  for (let i = 1; i < holidays.length; i++) {
      console.log(holidays[i]);
  }
+
+ let w = 1;
+ while ( w < holidays.length) {
+    console.log(holidays[w]);
+    w++;
+ }
+
