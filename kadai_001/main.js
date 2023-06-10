@@ -56,13 +56,8 @@ const keyPress = e => {
     return;
   }
 
-  //  タイムアップ表示
-  const createText = () => {
-  setTimeout(() => {
-    textContent.typedfield = "タイムアップ";
-  },300);
-  return;
-}
+  
+  
   
 
   // 正タイプの場合
@@ -75,11 +70,11 @@ const keyPress = e => {
   untypedfield.textContent = untyped;
   
   let dis = document.querySelector('h3');
-  dis.textContent = score;
+  dis.textContent = score + "文字";
 
 
   // テキストがなくなったら新しいテキストを表示
-  if(untyped === '') {
+  if(untyped == '') {
     createText();
   }
 };
@@ -107,8 +102,6 @@ const rankCheck = score => {
   
   
 };
-
-
 
 
 
@@ -164,6 +157,11 @@ start.addEventListener('click', () => {
   // キーボードのイベント処理
   document.addEventListener('keypress',keyPress);
 
+  // タイムアップ
+setTimeout(() => {
+  untypedfield.textContent = '';
+  timeout.textContent = 'タイムアップ!!!';
+}, 59999);
 
 });
 
